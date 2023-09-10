@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://atu4403.github.io/pelican-lessons-log/theme/css/main.css"
+    />
+    <title>pelican-lessons-log - 4 テーマの作成(1)</title>
+    <link
+      href="https://atu4403.github.io/pelican-lessons-log/feeds/all.atom.xml"
+      rel="alternate"
+      title="pelican-lessons-log Full Atom Feed"
+      type="application/atom+xml"
+    />
+        <link
+      href="https://atu4403.github.io/pelican-lessons-log/feeds/lesson.atom.xml"
+      rel="alternate"
+      title="pelican-lessons-log Categories Atom Feed"
+      type="application/atom+xml"
+    />
+     </head>
+  <body>
+    <!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="https://atu4403.github.io/pelican-lessons-log">pelican-lessons-log</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/pages/lian-luo-xian.html">連絡先</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/category/diary.html">diary</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/category/lesson.html">Lesson</a>
+      </li>
+     </ul>
+  </div>
+</nav>
+    <div class="container-fluid">
+      <div class="row">
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+  <ul class="navbar-nav">
+    <h3>Lesson</h3>
+     <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/hazimeni.html"
+        >はじめに</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/1-my-first-article.html"
+        >1 My First Article</a
+      >
+    </li>
+        <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/2-jing-de-pezitorinku.html"
+        >2 静的ページとリンク</a
+      >
+    </li>
+        <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/3-temanoshe-ding.html"
+        >3 テーマの設定</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/4-temanozuo-cheng-1.html"
+        >4 テーマの作成(1)</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/5-temanozuo-cheng-2.html"
+        >5 テーマの作成(2)</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/6-temanozuo-cheng-3.html"
+        >6 テーマの作成(3)</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/7-puraguinnozuo-cheng.html"
+        >7 プラグインの作成</a
+      >
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://atu4403.github.io/pelican-lessons-log/8-githubpageshedepuroisuru.html"
+        >8 GitHubPagesへデプロイする</a
+      >
+    </li>
+   </ul>
+</nav>
+        <!-- Main Content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+<section class="body" id="content">
+  <header>
+    <h2 class="entry-title display-5">
+      <a
+        href="https://atu4403.github.io/pelican-lessons-log/4-temanozuo-cheng-1.html"
+        rel="bookmark"
+        title="Permalink to 4 テーマの作成(1)"
+        >4 テーマの作成(1)</a
+      >
+    </h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2023-09-08T14:57:00+09:00">
+      2023-09-08
+    </time>
+     <address class="vcard author">
+      By       <a class="url fn" href="https://atu4403.github.io/pelican-lessons-log/author/vanic.html">vanic</a>
+    </address>
+     <div class="category">
+      Category:
+      <a href="https://atu4403.github.io/pelican-lessons-log/category/lesson.html"
+        >Lesson</a
+      >
+    </div>
+   </footer>
+  <!-- /.post-info -->
+  <div class="entry-content"><h2>はじめに</h2>
+<p>このチュートリアルでは、Pelicanのテーマ作成において重要な役割を果たすJinja2について解説します。Jinja2はHTMLテンプレートエンジンであり、HTMLを効率よく生成するための土台となります。また、このページはChatGPTにより作成しています。</p>
+<hr>
+<h2>PelicanのテーマとJinja2</h2>
+<p>Pelicanのテーマ作成にはJinja2が広く使われています。Jinja2はHTMLテンプレートエンジンであり、静的なHTMLを動的に生成するための強力なツールです。</p>
+<hr>
+<h2>Jinja2の基本概念</h2>
+<h3><code>extends</code>と<code>block</code></h3>
+<p><code>extends</code>はテンプレートの継承を行うための構文です。<code>block</code>はその中でコンテンツをオーバーライドできる領域を定義します。これらはテンプレートの基本部分を作成し、その上で特定の部分だけを変更するといった用途に適しています。</p>
+<h3><code>include</code></h3>
+<p><code>include</code>は特定のテンプレートをインポートするための構文です。これは「パーツとして複数箇所で使い回すのに適している」と言えます。例えば、ヘッダーやフッターなど、複数のページで共通の要素を持つ場合に便利です。</p>
+<hr>
+<h2>実例を通しての解説</h2>
+<p>以下のコードブロックを例に取ります。</p>
+<h3>base.html</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ja&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ page_title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    {% include &quot;header.html&quot; %}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>{% block content %}{% endblock %}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    {% include &quot;footer.html&quot; %}
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h3>header.html</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>これはヘッダーです<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h3>footer.html</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>これはフッターです<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h3>page1.html</h3>
+<div class="highlight"><pre><span></span><code>{% extends &quot;base.html&quot; %}
+{% block content %}
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>ページのコンテンツ<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>ここにページの内容が表示されます。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endblock %}
+</code></pre></div>
+
+<h2>page1.htmlのレンダリング過程</h2>
+<p><code>page1.html</code>は<code>base.html</code>を継承しています。この継承は<code>{% extends "base.html" %}</code>というJinja2の構文によって行われます。この構文があることで、<code>base.html</code>の内容が<code>page1.html</code>に取り込まれるわけです。</p>
+<h3><code>extends</code>と<code>block</code></h3>
+<p><code>{% block content %}</code>と<code>{% endblock %}</code>の間に書かれた内容は、<code>base.html</code>内の同名の<code>block</code>（この場合は<code>content</code>）をオーバーライド（上書き）します。具体的には、<code>base.html</code>の<code>{% block content %}{% endblock %}</code>が<code>page1.html</code>の<code>{% block content %} ... {% endblock %}</code>で指定された内容に置き換わります。</p>
+<h3><code>include</code></h3>
+<p><code>{% include "header.html" %}</code>と<code>{% include "footer.html" %}</code>は、それぞれ<code>header.html</code>と<code>footer.html</code>の内容をその位置に挿入します。これによって、ヘッダーとフッターが各ページで一貫したものになります。</p>
+<h2>レンダリング済のcontent.html</h2>
+<p>テンプレートのレンダリングを行った後の<code>content.html</code>は以下のようになります。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ja&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>（ここに実際のページタイトルが入ります）<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>これはヘッダーです<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>ページのコンテンツ<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>ここにページの内容が表示されます。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>これはフッターです<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>この<code>content.html</code>は、<code>base.html</code>の骨格に<code>page1.html</code>で指定された内容が埋め込まれ、さらに<code>header.html</code>と<code>footer.html</code>がそれぞれ適切な位置に挿入された結果です。</p>
+<p>以上が<code>page1.html</code>のレンダリング過程とその結果になります。このようにJinja2は非常に強力で、テンプレートの再利用や部品化を容易にしてくれます。</p>
+<hr>
+<h2>テンプレートと純粋なHTMLの違い</h2>
+<p>Jinja2テンプレートと純粋なHTMLファイルは、拡張子が<code>.html</code>である点では同じですが、内容と用途が異なります。この違いが初めての方には混乱を招く可能性がありますので、以下で詳しく解説します。</p>
+<h3>Jinja2テンプレート（base.html, header.html, page1.html）</h3>
+<ul>
+<li><strong>拡張子</strong>: <code>.html</code></li>
+<li><strong>内容</strong>: HTMLに加え、Jinja2の構文（<code>{% ... %}</code>, <code>{{ ... }}</code>など）が含まれる。</li>
+<li><strong>用途</strong>: レンダリングを通じて最終的なHTMLを生成するための「設計図」。</li>
+</ul>
+<p>例えば、<code>base.html</code>や<code>header.html</code>はJinja2の構文を含んでおり、これらは「テンプレート」として機能します。</p>
+<h3>純粋なHTML（content.html）</h3>
+<ul>
+<li><strong>拡張子</strong>: <code>.html</code></li>
+<li><strong>内容</strong>: 純粋なHTMLのみ。</li>
+<li><strong>用途</strong>: ブラウザで直接表示される最終的なページ。</li>
+</ul>
+<p><code>content.html</code>はレンダリング後の最終的なHTMLであり、Jinja2の構文は一切含まれていません。</p>
+<h2>まとめ</h2>
+<ul>
+<li>Jinja2テンプレートは、レンダリングの元となる「設計図」です。</li>
+<li>純粋なHTMLは、レンダリング後にブラウザで表示される「完成品」です。</li>
+</ul>
+<p>このように理解することで、Jinja2テンプレートと純粋なHTMLの違いと、それぞれの役割が明確になります。</p>
+<hr>
+<p>以上がJinja2の基本と、それをPelicanのテーマ作成でどのように活用するかの解説です。この知識を基に、効率的なテーマ作成を行ってください。</p></div>
+  <!-- /.entry-content -->
+  <ul>
+   </ul>
+</section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

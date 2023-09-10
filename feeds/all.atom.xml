@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>pelican-lessons-log</title><link href="https://atu4403.github.io/pelican-lessons-log/" rel="alternate"></link><link href="https://atu4403.github.io/pelican-lessons-log/feeds/all.atom.xml" rel="self"></link><id>https://atu4403.github.io/pelican-lessons-log/</id><updated>2023-09-10T14:00:00+09:00</updated><entry><title>はじめに</title><link href="https://atu4403.github.io/pelican-lessons-log/hazimeni.html" rel="alternate"></link><published>2023-09-07T11:25:00+09:00</published><updated>2023-09-07T11:25:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-07:/pelican-lessons-log/hazimeni.html</id><summary type="html">&lt;p&gt;この文書はPelicanの簡単なチュートリアルです。この文書自身もPelicanによって作成されました。PelicanはPythonで書かれた静的サイトジェネレータです。&lt;/p&gt;
+&lt;p&gt;pythonでサイトを作成するには&lt;code&gt;Flask&lt;/code&gt;や&lt;code&gt;Django&lt;/code&gt;が有名ですが、なぜ&lt;code&gt;Pelican&lt;/code&gt;を選んだのかを記しておきます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;静的サイト生成&lt;/strong&gt;：Pelicanは静的サイトジェネレータであり …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;この文書はPelicanの簡単なチュートリアルです。この文書自身もPelicanによって作成されました。PelicanはPythonで書かれた静的サイトジェネレータです。&lt;/p&gt;
+&lt;p&gt;pythonでサイトを作成するには&lt;code&gt;Flask&lt;/code&gt;や&lt;code&gt;Django&lt;/code&gt;が有名ですが、なぜ&lt;code&gt;Pelican&lt;/code&gt;を選んだのかを記しておきます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;静的サイト生成&lt;/strong&gt;：Pelicanは静的サイトジェネレータであり、一度生成されたページはその後のリクエストで再生成する必要がありません。これにより、サーバーの負荷を軽減し、ページのロード時間を短縮することができます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;軽量マークアップ言語のサポート&lt;/strong&gt;：PelicanはMarkdownやreStructuredTextなどの軽量マークアップ言語をサポートしています。これにより、HTMLを直接書くことなく、簡単にコンテンツを作成し、更新することができます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;学習コスト&lt;/strong&gt;：Pelicanは静的なコンテンツの作成に特化しているため、学習コストが低いです。これにより、ユーザーは迅速にサイトの作成と更新を開始することができます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pythonエコシステムの利用&lt;/strong&gt;：PelicanはPythonで書かれており、Pythonの豊富なエコシステムを利用することができます。例えば、データ分析や機械学習のライブラリを使用して、サイト上で動的なコンテンツを生成することも可能です。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;動的なコンテンツの生成について&lt;br&gt;
+「動的なコンテンツ」は、サイトがビルドされる際に生成されます。一方、「静的サイトジェネレータ」は、出力されるWebサイトが静的なHTMLファイルで構成されていることを意味します。したがって、「動的」はリアルタイムの変化ではなく、ビルド時の生成を指します。&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Lesson"></category></entry><entry><title>1 My First Article</title><link href="https://atu4403.github.io/pelican-lessons-log/1-my-first-article.html" rel="alternate"></link><published>2023-09-07T11:25:00+09:00</published><updated>2023-09-07T11:25:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-07:/pelican-lessons-log/1-my-first-article.html</id><summary type="html">&lt;h2&gt;ryeの導入&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# プロジェクトディレクトリの作成と移動をしておく&lt;/span&gt;
+rye&lt;span class="w"&gt; &lt;/span&gt;init
+rye&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pelican[markdown]&amp;quot;&lt;/span&gt;
+rye&lt;span class="w"&gt; &lt;/span&gt;sync
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;初期化&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-quickstart
+Welcome&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;pelican-quickstart&lt;span class="w"&gt; &lt;/span&gt;vunknown.
+
+This&lt;span class="w"&gt; &lt;/span&gt;script&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;help&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;Pelican-based&lt;span class="w"&gt; &lt;/span&gt;website …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;ryeの導入&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# プロジェクトディレクトリの作成と移動をしておく&lt;/span&gt;
+rye&lt;span class="w"&gt; &lt;/span&gt;init
+rye&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pelican[markdown]&amp;quot;&lt;/span&gt;
+rye&lt;span class="w"&gt; &lt;/span&gt;sync
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;初期化&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-quickstart
+Welcome&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;pelican-quickstart&lt;span class="w"&gt; &lt;/span&gt;vunknown.
+
+This&lt;span class="w"&gt; &lt;/span&gt;script&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;help&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;Pelican-based&lt;span class="w"&gt; &lt;/span&gt;website.
+
+Please&lt;span class="w"&gt; &lt;/span&gt;answer&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;following&lt;span class="w"&gt; &lt;/span&gt;questions&lt;span class="w"&gt; &lt;/span&gt;so&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;script&lt;span class="w"&gt; &lt;/span&gt;can&lt;span class="w"&gt; &lt;/span&gt;generate&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;files
+needed&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;Pelican.
+
+
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Where&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;site?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;.&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;What&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;title&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;site?&lt;span class="w"&gt; &lt;/span&gt;pelican-lessons-log
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Who&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;author&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;site?&lt;span class="w"&gt; &lt;/span&gt;vanic
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;What&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;language&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;site?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;ja&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;specify&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;URL&lt;span class="w"&gt; &lt;/span&gt;prefix?&lt;span class="w"&gt; &lt;/span&gt;e.g.,&lt;span class="w"&gt; &lt;/span&gt;https://example.com&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;n
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;article&lt;span class="w"&gt; &lt;/span&gt;pagination?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Y
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;How&lt;span class="w"&gt; &lt;/span&gt;many&lt;span class="w"&gt; &lt;/span&gt;articles&lt;span class="w"&gt; &lt;/span&gt;per&lt;span class="w"&gt; &lt;/span&gt;page&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;What&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;time&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;zone?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;Europe/Rome&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Asia/Tokyo
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;generate&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;tasks.py/Makefile&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;automate&lt;span class="w"&gt; &lt;/span&gt;generation&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;publishing?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Y/n&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Y
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;FTP?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;SSH?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;Dropbox?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;S3?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;Rackspace&lt;span class="w"&gt; &lt;/span&gt;Cloud&lt;span class="w"&gt; &lt;/span&gt;Files?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;want&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;upload&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;website&lt;span class="w"&gt; &lt;/span&gt;using&lt;span class="w"&gt; &lt;/span&gt;GitHub&lt;span class="w"&gt; &lt;/span&gt;Pages?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;y
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;Is&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;personal&lt;span class="w"&gt; &lt;/span&gt;page&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;username.github.io&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;y/N&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;N
+Done.&lt;span class="w"&gt; &lt;/span&gt;Your&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;project&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;available&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;/Users/atu/ghq/github.com/atu4403/pelican-lessons-log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;記事の作成&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 最初の記事の作成&lt;/span&gt;
+vi&lt;span class="w"&gt; &lt;/span&gt;content/my-first-article.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;サイトの生成とサーバーの起動&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican&lt;span class="w"&gt; &lt;/span&gt;content
+pelican&lt;span class="w"&gt; &lt;/span&gt;--listen
+&lt;span class="c1"&gt;# port指定&lt;/span&gt;
+&lt;span class="c1"&gt;# pelican -p=8200 --listen&lt;/span&gt;
+&lt;span class="c1"&gt;# 保存時に自動でビルド&lt;/span&gt;
+&lt;span class="c1"&gt;# pelican -p=8200 --autoreload --listen&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="http://localhost:8000/"&gt;localhost&lt;/a&gt;で確認できます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pelican-quickstart&lt;/code&gt;の際にmakefileを作成しておけば&lt;code&gt;pelican&lt;/code&gt;コマンドに加えて&lt;code&gt;make&lt;/code&gt;も使うことができます。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 開発用htmlの生成&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;html
+
+&lt;span class="c1"&gt;# ビルドしたファイルの削除&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;clean
+
+&lt;span class="c1"&gt;# 本番用htmlの生成&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;publish
+
+&lt;span class="c1"&gt;# 保存時に自動でビルド&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;regenerate
+
+&lt;span class="c1"&gt;# 開発サーバーの起動&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;serve
+
+&lt;span class="c1"&gt;# 開発サーバーの起動と保存時に自動でビルド&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;devserver
+
+&lt;span class="c1"&gt;# GitHubPagesへデプロイする(ghp-importのインストールが必要)&lt;/span&gt;
+make&lt;span class="w"&gt; &lt;/span&gt;github
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Lesson"></category></entry><entry><title>日記(1日目)</title><link href="https://atu4403.github.io/pelican-lessons-log/ri-ji-1ri-mu.html" rel="alternate"></link><published>2023-09-01T00:00:00+09:00</published><updated>2023-09-01T00:00:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-01:/pelican-lessons-log/ri-ji-1ri-mu.html</id><content type="html">&lt;h2&gt;content 1&lt;/h2&gt;
+&lt;p&gt;9:00: 起床&lt;/p&gt;
+&lt;p&gt;23:00: 就寝&lt;/p&gt;</content><category term="diary"></category></entry><entry><title>2 静的ページとリンク</title><link href="https://atu4403.github.io/pelican-lessons-log/2-jing-de-pezitorinku.html" rel="alternate"></link><published>2023-09-07T12:23:00+09:00</published><updated>2023-09-07T12:23:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-07:/pelican-lessons-log/2-jing-de-pezitorinku.html</id><summary type="html">&lt;h2&gt;注意事項&lt;/h2&gt;
+&lt;p&gt;ページの追加は&lt;code&gt;pelican content&lt;/code&gt;を再度実行することで反映される。開発サーバーの起動に&lt;code&gt;--autoreload&lt;/code&gt; をしていても即時反映は …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;注意事項&lt;/h2&gt;
+&lt;p&gt;ページの追加は&lt;code&gt;pelican content&lt;/code&gt;を再度実行することで反映される。開発サーバーの起動に&lt;code&gt;--autoreload&lt;/code&gt; をしていても即時反映はされない。&lt;/p&gt;
+&lt;h2&gt;静的ページの作成&lt;/h2&gt;
+&lt;p&gt;ブログ等の日々更新するものではなく、&lt;code&gt;about&lt;/code&gt;や&lt;code&gt;contact&lt;/code&gt;等の静的ページは&lt;code&gt;contact/pages&lt;/code&gt;ディレクトリに配置する。これはナビゲーションメニューに表示される。&lt;/p&gt;
+&lt;h2&gt;リンク&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[&lt;span class="nt"&gt;a link relative to the current file&lt;/span&gt;](&lt;span class="na"&gt;{filename}1_my-first-article.md&lt;/span&gt;)  
+[&lt;span class="nt"&gt;a link relative to the content root&lt;/span&gt;](&lt;span class="na"&gt;{filename}/1_my-first-article.md&lt;/span&gt;)  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://atu4403.github.io/pelican-lessons-log/1-my-first-article.html"&gt;a link relative to the current file&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://atu4403.github.io/pelican-lessons-log/1-my-first-article.html"&gt;a link relative to the content root&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;ここではmdファイルへのリンクになっているが、pelicanのビルドにより生成されたhtmlへのリンクに自動修正される。&lt;/p&gt;
+&lt;p&gt;この条件として、単純に&lt;code&gt;{filename}&lt;/code&gt;が変換されるのではなく、markdown記法でのlinkであることをチェックして変換していると思われる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{filename}/1_my-first-article.md&lt;/code&gt;
+{filename}/1_my-first-article.md (変換されない)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;({filename}/1_my-first-article.md)&lt;/code&gt;
+({filename}/1_my-first-article.md) (変換されない)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[link]({filename}/1_my-first-article.md)&lt;/code&gt;
+&lt;a href="https://atu4403.github.io/pelican-lessons-log/1-my-first-article.html"&gt;link&lt;/a&gt; (リンク先がhtmlに変換されている)&lt;/p&gt;
+&lt;p&gt;また、リンク先のファイルが存在しない場合は変換が行われない。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[link]({filename}/unknown.md)&lt;/code&gt;
+&lt;a href="{filename}/unknown.md"&gt;link&lt;/a&gt; (リンク先がmdのまま)&lt;/p&gt;
+&lt;h2&gt;静的ファイルへのリンク&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;content/images/onepiece06_chopper.png&lt;/code&gt;を表示する場合。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;![&lt;span class="nt"&gt;いらすとやさんのチョッパー&lt;/span&gt;](&lt;span class="na"&gt;{static}/images/onepiece06_chopper.png&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="いらすとやさんのチョッパー" src="https://atu4403.github.io/pelican-lessons-log/images/onepiece06_chopper.png"&gt;&lt;/p&gt;
+&lt;h2&gt;{filename}や{static}について&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;{static}&lt;/code&gt;はそのままのファイル名を配置するのに対して、&lt;code&gt;{filename}&lt;/code&gt;はmdやrstファイルから生成されたhtmlのパスに変換する。&lt;/p&gt;</content><category term="Lesson"></category></entry><entry><title>日記(2日目)</title><link href="https://atu4403.github.io/pelican-lessons-log/ri-ji-2ri-mu.html" rel="alternate"></link><published>2023-09-02T00:00:00+09:00</published><updated>2023-09-02T00:00:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-02:/pelican-lessons-log/ri-ji-2ri-mu.html</id><content type="html">&lt;h2&gt;content 2&lt;/h2&gt;
+&lt;p&gt;5:00: 起床&lt;/p&gt;
+&lt;p&gt;22:00: 就寝&lt;/p&gt;</content><category term="diary"></category></entry><entry><title>3 テーマの設定</title><link href="https://atu4403.github.io/pelican-lessons-log/3-temanoshe-ding.html" rel="alternate"></link><published>2023-09-07T14:15:00+09:00</published><updated>2023-09-07T14:15:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-07:/pelican-lessons-log/3-temanoshe-ding.html</id><summary type="html">&lt;h2&gt;テーマの設定&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;pelican-themes&lt;/code&gt;コマンドが用意されている。&lt;/p&gt;
+&lt;h3&gt;使用可能なテーマの確認&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;-l
+simple
+notmyidea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;テーマのインストール&lt;/h3&gt;
+&lt;p&gt;テーマを使用 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;テーマの設定&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;pelican-themes&lt;/code&gt;コマンドが用意されている。&lt;/p&gt;
+&lt;h3&gt;使用可能なテーマの確認&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;-l
+simple
+notmyidea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;テーマのインストール&lt;/h3&gt;
+&lt;p&gt;テーマを使用するためにはインストール、もしくはテーマを置いているパスを指定する必要がある。
+また、インストールするためにも、テーマを置いているパスを指定する必要がある。&lt;/p&gt;
+&lt;p&gt;どちらにしてもシステム内にテーマを保存する必要があるので、試しに以下のリポジトリを丸ごとcloneした。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-themes"&gt;GitHub - getpelican/pelican-themes: Themes for Pelican&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上記のリポジトリからインストールしたいテーマのパスを指定して以下を実行。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;--install&lt;span class="w"&gt; &lt;/span&gt;~/ghq/github.com/getpelican/pelican-themes/BT3-Flat
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;-l
+BT3-Flat
+simple
+notmyidea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;テーマを使用する&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;に設定を追加すると、テーマが反映される。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;THEME = &amp;quot;BT3-Flat&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Lesson"></category></entry><entry><title>4 テーマの作成(1)</title><link href="https://atu4403.github.io/pelican-lessons-log/4-temanozuo-cheng-1.html" rel="alternate"></link><published>2023-09-08T14:57:00+09:00</published><updated>2023-09-08T14:57:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-08:/pelican-lessons-log/4-temanozuo-cheng-1.html</id><summary type="html">&lt;h2&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;このチュートリアルでは、Pelicanのテーマ作成において重要な役割を果たすJinja2について解説します。Jinja2はHTMLテンプレートエンジンであり、HTMLを効率よく生成するための土台となります。また、このページはChatGPTにより作成しています。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;PelicanのテーマとJinja2&lt;/h2&gt;
+&lt;p&gt;Pelicanのテーマ作成にはJinja2が広く使われています。Jinja2はHTMLテンプレートエンジンであり、静的なHTMLを動的に生成するための強力なツールです。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Jinja2の基本概念&lt;/h2&gt;
+&lt;h3&gt;&lt;code&gt;extends&lt;/code&gt;と&lt;code&gt;block&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;extends&lt;/code&gt;はテンプレートの継承を …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;このチュートリアルでは、Pelicanのテーマ作成において重要な役割を果たすJinja2について解説します。Jinja2はHTMLテンプレートエンジンであり、HTMLを効率よく生成するための土台となります。また、このページはChatGPTにより作成しています。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;PelicanのテーマとJinja2&lt;/h2&gt;
+&lt;p&gt;Pelicanのテーマ作成にはJinja2が広く使われています。Jinja2はHTMLテンプレートエンジンであり、静的なHTMLを動的に生成するための強力なツールです。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Jinja2の基本概念&lt;/h2&gt;
+&lt;h3&gt;&lt;code&gt;extends&lt;/code&gt;と&lt;code&gt;block&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;extends&lt;/code&gt;はテンプレートの継承を行うための構文です。&lt;code&gt;block&lt;/code&gt;はその中でコンテンツをオーバーライドできる領域を定義します。これらはテンプレートの基本部分を作成し、その上で特定の部分だけを変更するといった用途に適しています。&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;include&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;include&lt;/code&gt;は特定のテンプレートをインポートするための構文です。これは「パーツとして複数箇所で使い回すのに適している」と言えます。例えば、ヘッダーやフッターなど、複数のページで共通の要素を持つ場合に便利です。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;実例を通しての解説&lt;/h2&gt;
+&lt;p&gt;以下のコードブロックを例に取ります。&lt;/p&gt;
+&lt;h3&gt;base.html&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ja&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ page_title }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% include &amp;quot;header.html&amp;quot; %}
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% block content %}{% endblock %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% include &amp;quot;footer.html&amp;quot; %}
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;header.html&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;header&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;これはヘッダーです&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;header&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;footer.html&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;footer&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;これはフッターです&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;footer&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;page1.html&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;{% extends &amp;quot;base.html&amp;quot; %}
+{% block content %}
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;ページのコンテンツ&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;ここにページの内容が表示されます。&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;page1.htmlのレンダリング過程&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;page1.html&lt;/code&gt;は&lt;code&gt;base.html&lt;/code&gt;を継承しています。この継承は&lt;code&gt;{% extends "base.html" %}&lt;/code&gt;というJinja2の構文によって行われます。この構文があることで、&lt;code&gt;base.html&lt;/code&gt;の内容が&lt;code&gt;page1.html&lt;/code&gt;に取り込まれるわけです。&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;extends&lt;/code&gt;と&lt;code&gt;block&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;{% block content %}&lt;/code&gt;と&lt;code&gt;{% endblock %}&lt;/code&gt;の間に書かれた内容は、&lt;code&gt;base.html&lt;/code&gt;内の同名の&lt;code&gt;block&lt;/code&gt;（この場合は&lt;code&gt;content&lt;/code&gt;）をオーバーライド（上書き）します。具体的には、&lt;code&gt;base.html&lt;/code&gt;の&lt;code&gt;{% block content %}{% endblock %}&lt;/code&gt;が&lt;code&gt;page1.html&lt;/code&gt;の&lt;code&gt;{% block content %} ... {% endblock %}&lt;/code&gt;で指定された内容に置き換わります。&lt;/p&gt;
+&lt;h3&gt;&lt;code&gt;include&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;{% include "header.html" %}&lt;/code&gt;と&lt;code&gt;{% include "footer.html" %}&lt;/code&gt;は、それぞれ&lt;code&gt;header.html&lt;/code&gt;と&lt;code&gt;footer.html&lt;/code&gt;の内容をその位置に挿入します。これによって、ヘッダーとフッターが各ページで一貫したものになります。&lt;/p&gt;
+&lt;h2&gt;レンダリング済のcontent.html&lt;/h2&gt;
+&lt;p&gt;テンプレートのレンダリングを行った後の&lt;code&gt;content.html&lt;/code&gt;は以下のようになります。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ja&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;（ここに実際のページタイトルが入ります）&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;header&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;これはヘッダーです&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;header&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;ページのコンテンツ&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;ここにページの内容が表示されます。&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;footer&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;これはフッターです&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;footer&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;この&lt;code&gt;content.html&lt;/code&gt;は、&lt;code&gt;base.html&lt;/code&gt;の骨格に&lt;code&gt;page1.html&lt;/code&gt;で指定された内容が埋め込まれ、さらに&lt;code&gt;header.html&lt;/code&gt;と&lt;code&gt;footer.html&lt;/code&gt;がそれぞれ適切な位置に挿入された結果です。&lt;/p&gt;
+&lt;p&gt;以上が&lt;code&gt;page1.html&lt;/code&gt;のレンダリング過程とその結果になります。このようにJinja2は非常に強力で、テンプレートの再利用や部品化を容易にしてくれます。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;テンプレートと純粋なHTMLの違い&lt;/h2&gt;
+&lt;p&gt;Jinja2テンプレートと純粋なHTMLファイルは、拡張子が&lt;code&gt;.html&lt;/code&gt;である点では同じですが、内容と用途が異なります。この違いが初めての方には混乱を招く可能性がありますので、以下で詳しく解説します。&lt;/p&gt;
+&lt;h3&gt;Jinja2テンプレート（base.html, header.html, page1.html）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拡張子&lt;/strong&gt;: &lt;code&gt;.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内容&lt;/strong&gt;: HTMLに加え、Jinja2の構文（&lt;code&gt;{% ... %}&lt;/code&gt;, &lt;code&gt;{{ ... }}&lt;/code&gt;など）が含まれる。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用途&lt;/strong&gt;: レンダリングを通じて最終的なHTMLを生成するための「設計図」。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例えば、&lt;code&gt;base.html&lt;/code&gt;や&lt;code&gt;header.html&lt;/code&gt;はJinja2の構文を含んでおり、これらは「テンプレート」として機能します。&lt;/p&gt;
+&lt;h3&gt;純粋なHTML（content.html）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拡張子&lt;/strong&gt;: &lt;code&gt;.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内容&lt;/strong&gt;: 純粋なHTMLのみ。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用途&lt;/strong&gt;: ブラウザで直接表示される最終的なページ。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;content.html&lt;/code&gt;はレンダリング後の最終的なHTMLであり、Jinja2の構文は一切含まれていません。&lt;/p&gt;
+&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Jinja2テンプレートは、レンダリングの元となる「設計図」です。&lt;/li&gt;
+&lt;li&gt;純粋なHTMLは、レンダリング後にブラウザで表示される「完成品」です。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このように理解することで、Jinja2テンプレートと純粋なHTMLの違いと、それぞれの役割が明確になります。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;以上がJinja2の基本と、それをPelicanのテーマ作成でどのように活用するかの解説です。この知識を基に、効率的なテーマ作成を行ってください。&lt;/p&gt;</content><category term="Lesson"></category></entry><entry><title>5 テーマの作成(2)</title><link href="https://atu4403.github.io/pelican-lessons-log/5-temanozuo-cheng-2.html" rel="alternate"></link><published>2023-09-08T17:05:00+09:00</published><updated>2023-09-08T17:05:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-08:/pelican-lessons-log/5-temanozuo-cheng-2.html</id><summary type="html">&lt;h2&gt;themeディレクトリの構造について&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/latest/themes.html#structure"&gt;公式のドキュメント&lt;/a&gt;では、以下の説明が書かれています。&lt;/p&gt;
+&lt;pre&gt;&lt;span&gt;&lt;/span&gt;├── static
+│   ├── css
+│   └── images
+└── templates
+    ├── archives.html         // to display archives
+    ├── article.html          // processed for each article
+    ├── author.html           // processed for each author
+    ├── authors.html          // must list …&lt;/pre&gt;</summary><content type="html">&lt;h2&gt;themeディレクトリの構造について&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/latest/themes.html#structure"&gt;公式のドキュメント&lt;/a&gt;では、以下の説明が書かれています。&lt;/p&gt;
+&lt;pre&gt;&lt;span&gt;&lt;/span&gt;├── static
+│   ├── css
+│   └── images
+└── templates
+    ├── archives.html         // to display archives
+    ├── article.html          // processed for each article
+    ├── author.html           // processed for each author
+    ├── authors.html          // must list all the authors
+    ├── categories.html       // must list all the categories
+    ├── category.html         // processed for each category
+    ├── index.html            // the index (list all the articles)
+    ├── page.html             // processed for each page
+    ├── period_archives.html  // to display time-period archives
+    ├── tag.html              // processed for each tag
+    └── tags.html             // must list all the tags. Can be a tag cloud.
+&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;staticにはすべての静的アセットが含まれ、出力テーマのフォルダにコピーされます。上記のファイルシステム・レイアウトにはCSSと画像のフォルダが含まれていますが、これらは単なる例です。必要なものをここに入れてください。&lt;/p&gt;
+&lt;p&gt;templatesには、コンテンツの生成に使用されるすべてのテンプレートが含まれます。上記のテンプレートファイルは必須です。テーマ作成中に整理整頓がしやすくなるのであれば、独自のテンプレートを追加することもできます。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ここで混乱してしまうポイントがあります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;これらのhtmlファイルの役割&lt;/li&gt;
+&lt;li&gt;生成されるhtmlファイルとの関係&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;まず勘違いしてしまうのは、これらと同名のhtmlファイルが作成されるのではないかということです。半分正解で半分間違いです。&lt;/p&gt;
+&lt;p&gt;例えば&lt;code&gt;index.html&lt;/code&gt;は、このテンプレートから&lt;code&gt;index.html&lt;/code&gt;が生成されます。&lt;code&gt;tags.html&lt;/code&gt;や&lt;code&gt;categories.html&lt;/code&gt;も生成されます。&lt;br&gt;
+一方で&lt;code&gt;article.html&lt;/code&gt;は生成されません。このテンプレートはmarkdown等で用意した記事をレンダリングするために使われて、&lt;code&gt;記事名.html&lt;/code&gt;などのファイルが作成されます。&lt;/p&gt;
+&lt;p&gt;さらに、&lt;code&gt;tag.html&lt;/code&gt;等の、他のページからincludeされる役割のテンプレートもあります。&lt;/p&gt;
+&lt;p&gt;よって上図のhtmlファイルは、&lt;strong&gt;必要なファイル&lt;/strong&gt;と&lt;strong&gt;場合によっては不要なファイル&lt;/strong&gt;に分別できます。&lt;/p&gt;
+&lt;h3&gt;必須のテンプレート&lt;/h3&gt;
+&lt;p&gt;以下は、Pelicanのテンプレート作成において必要となる、各テンプレート（&lt;code&gt;.html&lt;/code&gt;ファイル）の説明を抽出したものです。&lt;/p&gt;
+&lt;h4&gt;index.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;これはブログのホームページまたはインデックスで、&lt;code&gt;index.html&lt;/code&gt;で生成されます。&lt;/li&gt;
+&lt;li&gt;ページネーションが有効な場合、次のページは&lt;code&gt;index{number}.html&lt;/code&gt;に配置されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;author.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは存在する各著者ごとに処理され、&lt;code&gt;AUTHOR_SAVE_AS&lt;/code&gt;設定（デフォルト：&lt;code&gt;author/{slug}.html&lt;/code&gt;）に従って出力が生成されます。&lt;/li&gt;
+&lt;li&gt;ページネーションが有効な場合、次のページはデフォルトで&lt;code&gt;author/{slug}{number}.html&lt;/code&gt;に配置されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;category.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは存在する各カテゴリごとに処理され、&lt;code&gt;CATEGORY_SAVE_AS&lt;/code&gt;設定（デフォルト：&lt;code&gt;category/{slug}.html&lt;/code&gt;）に従って出力が生成されます。&lt;/li&gt;
+&lt;li&gt;ページネーションが有効な場合、次のページはデフォルトで&lt;code&gt;category/{slug}{number}.html&lt;/code&gt;に配置されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;article.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは各記事ごとに処理され、&lt;code&gt;ARTICLE_SAVE_AS&lt;/code&gt;設定（デフォルト：&lt;code&gt;{slug}.html&lt;/code&gt;）に従って出力が生成されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;page.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは各ページごとに処理され、&lt;code&gt;PAGE_SAVE_AS&lt;/code&gt;設定（デフォルト：&lt;code&gt;pages/{slug}.html&lt;/code&gt;）に従って出力が生成されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;tag.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは各タグごとに処理され、&lt;code&gt;TAG_SAVE_AS&lt;/code&gt;設定（デフォルト：&lt;code&gt;tag/{slug}.html&lt;/code&gt;）に従って出力が生成されます。&lt;/li&gt;
+&lt;li&gt;ページネーションが有効な場合、次のページはデフォルトで&lt;code&gt;tag/{slug}{number}.html&lt;/code&gt;に配置されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;period_archives.html&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;このテンプレートは、&lt;code&gt;YEAR_ARCHIVE_SAVE_AS&lt;/code&gt;、&lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;、&lt;code&gt;DAY_ARCHIVE_SAVE_AS&lt;/code&gt;が定義されている場合、それぞれの年、月、日の投稿に対して処理されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;この情報は、Pelicanの公式ドキュメントから翻訳、抽出されたものです。&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Lesson"></category></entry><entry><title>6 テーマの作成(3)</title><link href="https://atu4403.github.io/pelican-lessons-log/6-temanozuo-cheng-3.html" rel="alternate"></link><published>2023-09-09T13:26:00+09:00</published><updated>2023-09-09T13:26:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-09:/pelican-lessons-log/6-temanozuo-cheng-3.html</id><summary type="html">&lt;p&gt;ここでは実際にテーマを作成する方法を解説します。今回は実際にこのチュートリアルでも使用されているような …&lt;/p&gt;</summary><content type="html">&lt;p&gt;ここでは実際にテーマを作成する方法を解説します。今回は実際にこのチュートリアルでも使用されているような&lt;code&gt;bootstrap5&lt;/code&gt;を使ったテーマを作成します。&lt;/p&gt;
+&lt;h2&gt;テンプレートを用意する&lt;/h2&gt;
+&lt;p&gt;前の項でも解説しましたが、テーマの作成には以下のファイルが必要です。&lt;/p&gt;
+&lt;pre&gt;&lt;span&gt;&lt;/span&gt;├── static
+│   ├── css
+│   └── images
+└── templates
+    ├── archives.html         // to display archives
+    ├── article.html          // processed for each article
+    ├── author.html           // processed for each author
+    ├── authors.html          // must list all the authors
+    ├── categories.html       // must list all the categories
+    ├── category.html         // processed for each category
+    ├── index.html            // the index (list all the articles)
+    ├── page.html             // processed for each page
+    ├── period_archives.html  // to display time-period archives
+    ├── tag.html              // processed for each tag
+    └── tags.html             // must list all the tags. Can be a tag cloud.
+&lt;/pre&gt;
+
+&lt;p&gt;これを実際に用意するのは大変なので、今回は公式の&lt;code&gt;simple&lt;/code&gt;テーマをコピーして修正する方法を取ります。
+&lt;code&gt;Pelican&lt;/code&gt;をインストールした場所に&lt;code&gt;simple&lt;/code&gt;テーマが入っています。私の場合は仮想環境にインストールしているので以下の場所にあります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.venv/lib/python3.11/site-packages/pelican/themes/simple&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;これをプロジェクトにコピーします。今回は&lt;code&gt;theme&lt;/code&gt;というディレクトリを作成し、その中にコピーしました。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;theme&lt;/code&gt;ディレクトリの直下には&lt;code&gt;templates&lt;/code&gt;ディレクトリがあり、その中にテンプレートの&lt;code&gt;html&lt;/code&gt;ファイルが入っていればOKです。&lt;/p&gt;
+&lt;h2&gt;テーマのインストール&lt;/h2&gt;
+&lt;p&gt;以下のコマンドで&lt;code&gt;theme&lt;/code&gt;ディレクトリがインストールできます。&lt;code&gt;-l&lt;/code&gt;コマンドでインストールされているテーマが一覧できます。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;-i&lt;span class="w"&gt; &lt;/span&gt;theme
+&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;pelican-themes&lt;span class="w"&gt; &lt;/span&gt;-l
+BT3-Flat
+simple
+theme
+notmyidea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;でテーマを指定すると下準備は完了です。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;THEME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;theme&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;テーマの修正&lt;/h2&gt;
+&lt;p&gt;用意したテーマを&lt;code&gt;bootstrap5&lt;/code&gt;に対応したものに修正します。今回はChatGPTにお願いしました。&lt;/p&gt;
+&lt;p&gt;ChatGPT plusに加入している方は&lt;code&gt;Advanced Data Analytics(旧Code Interprete)&lt;/code&gt;を使うと楽ですが、加入していない方もなんとかなると思います。&lt;/p&gt;
+&lt;h3&gt;ChatGPT plusの場合&lt;/h3&gt;
+&lt;p&gt;ChatGPTで&lt;code&gt;dvanced Data Analytics&lt;/code&gt;を選択し、&lt;code&gt;base.html&lt;/code&gt;をアップロードして以下のようなプロンプトを入力します。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;これはPelicanのThemeテンプレートです。bootstrap5にフィットするように書き換えてください。
+以下のCDNを使用してください。
+
+CSS&lt;span class="w"&gt; &lt;/span&gt;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
+JS&lt;span class="w"&gt;  &lt;/span&gt;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
+
+以下の条件を考慮してください
+-&lt;span class="w"&gt; &lt;/span&gt;ヘッダーバー
+-&lt;span class="w"&gt; &lt;/span&gt;サイドバー
+-&lt;span class="w"&gt; &lt;/span&gt;レスポンシブデザイン&lt;span class="o"&gt;(&lt;/span&gt;PC,スマートフォンに対応&lt;span class="o"&gt;)&lt;/span&gt;
+-&lt;span class="w"&gt; &lt;/span&gt;ヘッダーやサイドバーの内容は簡単なもので構いません。
+
+完成したものをダウンロードできるようにしてください。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ダウンロードしたものを&lt;code&gt;base.html&lt;/code&gt;と差し替えると完成です。他のファイルも同じようにすると終了です。&lt;/p&gt;
+&lt;h3&gt;ChatGPT plusが使えない場合&lt;/h3&gt;
+&lt;p&gt;以下のようなプロンプトにより修正ができます。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;ここにbase.htmlの内容をコピーする&lt;span class="o"&gt;]&lt;/span&gt;
+
+これはPelicanのThemeテンプレートです。bootstrap5にフィットするように書き換えてください。
+以下のCDNを使用してください。
+
+CSS&lt;span class="w"&gt; &lt;/span&gt;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
+JS&lt;span class="w"&gt;  &lt;/span&gt;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
+
+以下の条件を考慮してください
+-&lt;span class="w"&gt; &lt;/span&gt;ヘッダーバー
+-&lt;span class="w"&gt; &lt;/span&gt;サイドバー
+-&lt;span class="w"&gt; &lt;/span&gt;レスポンシブデザイン&lt;span class="o"&gt;(&lt;/span&gt;PC,スマートフォンに対応&lt;span class="o"&gt;)&lt;/span&gt;
+-&lt;span class="w"&gt; &lt;/span&gt;ヘッダーやサイドバーの内容は簡単なもので構いません。
+
+完成したものをコピーできるようにしてください。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ただし、修正したコードの量により省略されてしまうので、分割する必要があります。　　
+他のファイルも同じようにすると終了です。&lt;/p&gt;
+&lt;h3&gt;CSSファイルの追加&lt;/h3&gt;
+&lt;p&gt;bootstrap5によりCSSは追加されていますが、独自のCSSを反映したい場合には以下を参考にしてください。&lt;/p&gt;
+&lt;p&gt;まず&lt;code&gt;base.html&lt;/code&gt;を修正します。　　
+&lt;code&gt;bootstrap.min.css&lt;/code&gt;を指定したlinkタグが作成済だと思いますので、その後に追加します。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;これにより環境に応じたパスにレンダリングされます。&lt;br&gt;
+&lt;code&gt;CSS_FILE&lt;/code&gt;はデフォルトで&lt;code&gt;main.css&lt;/code&gt;となっていますが、&lt;code&gt;pelicanconf.py&lt;/code&gt;で変更できます。&lt;/p&gt;
+&lt;p&gt;次に&lt;code&gt;theme/static/css/main.css&lt;/code&gt;を作成します。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&amp;amp;family=Noto+Sans+JP:wght@300&amp;amp;display=swap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Noto Sans JP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sans&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;M PLUS 1 Code&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;monospace&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="n"&gt;内側の余白&lt;/span&gt;&lt;span class="o"&gt;*/&lt;/span&gt;
+  &lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;001.5&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="n"&gt;外側の余白&lt;/span&gt;&lt;span class="o"&gt;*/&lt;/span&gt;
+  &lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;solid1px&lt;/span&gt;&lt;span class="c1"&gt;#eaedf2; /*枠線*/&lt;/span&gt;
+  &lt;span class="n"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;#f3f6fc; /*背景色*/&lt;/span&gt;
+  &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;#54687c; /*文字色*/&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以上で追加したCSSが反映されます。&lt;/p&gt;</content><category term="Lesson"></category></entry><entry><title>7 プラグインの作成</title><link href="https://atu4403.github.io/pelican-lessons-log/7-puraguinnozuo-cheng.html" rel="alternate"></link><published>2023-09-10T12:39:00+09:00</published><updated>2023-09-10T12:39:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-10:/pelican-lessons-log/7-puraguinnozuo-cheng.html</id><summary type="html">&lt;p&gt;ここではプラグインを作成する例を解説します。同時に、動的にコンテンツを作成する方法も紹介します。&lt;/p&gt;
+&lt;h2&gt;プラグイン …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;ここではプラグインを作成する例を解説します。同時に、動的にコンテンツを作成する方法も紹介します。&lt;/p&gt;
+&lt;h2&gt;プラグインとは&lt;/h2&gt;
+&lt;p&gt;Pelicanはプラグインをサポートしており、Pelicanのプラグインを利用すると、以下のようなことができます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新しいコンテンツタイプの追加&lt;/li&gt;
+&lt;li&gt;カスタムフィルターやテンプレートの統合&lt;/li&gt;
+&lt;li&gt;外部データの取り込み&lt;/li&gt;
+&lt;li&gt;SEO対策の自動生成&lt;/li&gt;
+&lt;li&gt;カスタムURLの生成&lt;/li&gt;
+&lt;li&gt;サイトのパフォーマンス向上&lt;/li&gt;
+&lt;li&gt;カスタムメタデータや設定の追加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの機能をプラグインを作成して追加できます。プラグインはPythonで記述され、特定のシグナルにフックしてカスタム処理を実行します。詳細な情報はPelicanの公式ドキュメントを参照してください。&lt;/p&gt;
+&lt;h2&gt;コード例&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;__init__.py&lt;/code&gt;を作成します。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;jinja2&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;FileSystemLoader&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;signals&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican.settings&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;read_settings&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unidecode&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unidecode&lt;/span&gt;
+
+&lt;span class="n"&gt;unique_prefix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;_auto_gen_&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;content_dir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;read_settings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pelicanconf.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;PATH&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_api_mock&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;diarys&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;日記(1日目)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;dt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2023-09-01&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;categorie&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;diary&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;content_title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;content 1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;contents&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;time&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;9:00&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;起床&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;time&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;23:00&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;就寝&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+                &lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="p"&gt;},&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;日記(2日目)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;dt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2023-09-02&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;categorie&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;diary&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;content_title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;content 2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;contents&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;time&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;5:00&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;起床&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;time&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;22:00&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;就寝&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+                &lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;to_valid_filename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;input_string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c1"&gt;# Unicode文字列をASCIIに変換&lt;/span&gt;
+    &lt;span class="n"&gt;valid_filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unidecode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;input_string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;# 空白をアンダースコアに置換&lt;/span&gt;
+    &lt;span class="n"&gt;valid_filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;valid_filename&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;_&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# 拡張子が指定されている場合、拡張子を付与&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;valid_filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;valid_filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;fmt&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;unique_prefix&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;valid_filename&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_md&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_api_mock&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;env&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;loader&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FileSystemLoader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;plugins/sample-generator/templates&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sample01.md&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;diary&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;diarys&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+        &lt;span class="c1"&gt;# print(&amp;quot;diary: &amp;quot;, content_dir)&lt;/span&gt;
+        &lt;span class="n"&gt;diary&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sortorder&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+        &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;to_valid_filename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;diary&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;md&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;rendered_template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;diary&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;save_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;
+        &lt;span class="n"&gt;save_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rendered_template&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;delete_md&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c1"&gt;# Create a Path object for the content directory&lt;/span&gt;
+    &lt;span class="n"&gt;content_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Check if the content directory exists&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;content_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Content directory &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;content_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; does not exist.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Iterate through all the files in the content directory&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;file_path&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;content_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique_prefix&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unlink&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+                &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Deleted &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;An error occurred while deleting &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# Pelicanのシグナルにフックしてプラグインを実行&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;register&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;initialized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;generate_md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;finalized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delete_md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;色々と書いていますが、重要なのはregister関数です。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Pelicanのシグナルにフックしてプラグインを実行&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;register&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;initialized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;generate_md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;finalized&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delete_md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;initialized、つまりpelicanによりビルドが行われる前に&lt;code&gt;generate_md&lt;/code&gt;関数が呼ばれます。&lt;br&gt;
+finalized、つまりビルドが行われた後に&lt;code&gt;delete_md&lt;/code&gt;関数が呼ばれます。&lt;/p&gt;
+&lt;p&gt;この例では動的にmarkdownファイルを生成して&lt;code&gt;content&lt;/code&gt;ディレクトリに配置しています。pelicanによるビルドが完了した後で、生成したmarkdownファイルを削除しています。&lt;/p&gt;
+&lt;h2&gt;配置例&lt;/h2&gt;
+&lt;p&gt;プロジェクト直下(contentディレクトリと同じ階層)に&lt;code&gt;plugins&lt;/code&gt;というディレクトリを作成し、その中に&lt;code&gt;sample-generator&lt;/code&gt;ディレクトリを作成しています。&lt;code&gt;sample-generator&lt;/code&gt;がプラグイン名になります。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;plugins/
+└──&lt;span class="w"&gt; &lt;/span&gt;sample-generator
+&lt;span class="w"&gt;    &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+&lt;span class="w"&gt;    &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;templates
+&lt;span class="w"&gt;        &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;sample01.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;pelicanconf.py&lt;/code&gt;に以下の記述を追加すると、pelicanのビルド時に実行されるようになります。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# プラグインが存在するディレクトリのパスを指定&lt;/span&gt;
+&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 使用するプラグインの名前をリストに追加&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sample-generator&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Lesson"></category></entry><entry><title>8 GitHubPagesへデプロイする</title><link href="https://atu4403.github.io/pelican-lessons-log/8-githubpageshedepuroisuru.html" rel="alternate"></link><published>2023-09-10T14:00:00+09:00</published><updated>2023-09-10T14:00:00+09:00</updated><author><name>vanic</name></author><id>tag:atu4403.github.io,2023-09-10:/pelican-lessons-log/8-githubpageshedepuroisuru.html</id><content type="html">&lt;p&gt;ここではgithub pagesへデプロイする方法を解説します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;'publishconf.py'のSITEURLを設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make publish&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;git add &amp;amp; commit&lt;/li&gt;
+&lt;li&gt;githubリポジトリの作成とpush(&lt;code&gt;gh repo create&lt;/code&gt;が便利)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make github&lt;/code&gt;(&lt;code&gt;ghp-import&lt;/code&gt;のインストールが必要)&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Lesson"></category></entry></feed>
