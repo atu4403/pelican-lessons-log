@@ -1,0 +1,12 @@
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+  <ul class="navbar-nav">
+    <h3>Lesson</h3>
+    {% for article in articles %} {% if 'Lesson' == article.category %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}"
+        >{{ article.title }}</a
+      >
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+</nav>

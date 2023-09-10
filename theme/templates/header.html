@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {% for title, link in MENUITEMS %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ link }}">{{ title }}</a>
+      </li>
+      {% endfor %} {% if DISPLAY_PAGES_ON_MENU %} {% for p in pages %}
+      <li class="nav-item{% if p == page %} active{% endif %}">
+        <a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+      </li>
+      {% endfor %} {% endif %} {% if DISPLAY_CATEGORIES_ON_MENU %} {% for cat,
+      null in categories %}
+      <li class="nav-item{% if cat == category %} active{% endif %}">
+        <a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+      </li>
+      {% endfor %} {% endif %}
+    </ul>
+  </div>
+</nav>
