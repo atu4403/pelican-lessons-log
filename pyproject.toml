@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "pelican[markdown]>=4.8.0",
     "pelican-neighbors>=1.2.0",
+    "ghp-import>=2.1.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

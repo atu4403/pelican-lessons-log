@@ -87,3 +87,20 @@ make devserver
 # GitHubPagesへデプロイする(ghp-importのインストールが必要)
 make github
 ```
+
+## pelicanconf.pyとpublishconf.py
+
+`pelican-quickstart`を実行すると`pelicanconf.py`は自動で作成されますが、以下の記述を追加しました。
+
+```python
+PORT = 8200
+SITEURL = "http://localhost:8200"
+```
+
+`pelicanconf.py`は開発環境用の設定になります。
+
+デフォルトでは`PORT = 8000`ですが、他の開発サーバーと被りそうなので変更しています。また、それに合わせて`SITEURL`も設定しています。これにより適切なリンクがレンダリングされます。
+
+`publishconf.py`は本番環境用の設定になります。とはいえ、開発環境用の設定と異なる項目は多くないので、`publishconf.py`は`pelicanconf.py`を読み込み、それを上書きする仕様になっているようです。
+
+本番環境用の`SITEURL`はこちらに書きます。

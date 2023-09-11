@@ -1,13 +1,11 @@
 AUTHOR = "vanic"
 SITENAME = "pelican-lessons-log"
-# SITEURL = "/"
 SITEURL = "http://localhost:8200"
-# SITEURL = "https://example.com"
+PORT = 8200
+OUTPUT_PATH = "docs/"
 
 PATH = "content"
-
 TIMEZONE = "Asia/Tokyo"
-
 DEFAULT_LANG = "ja"
 
 # Feed generation is usually not desired when developing
@@ -48,4 +46,3 @@ PLUGIN_PATHS = ["plugins"]
 
 # 使用するプラグインの名前をリストに追加
 PLUGINS = ["sample-generator"]
-PORT = 8200
