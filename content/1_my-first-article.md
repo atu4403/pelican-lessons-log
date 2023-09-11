@@ -26,7 +26,7 @@ needed by Pelican.
     
 > Where do you want to create your new web site? [.] 
 > What will be the title of this web site? pelican-lessons-log
-> Who will be the author of this web site? vanic
+> Who will be the author of this web site? atu4403
 > What will be the default language of this web site? [ja] 
 > Do you want to specify a URL prefix? e.g., https://example.com   (Y/n) n
 > Do you want to enable article pagination? (Y/n) Y

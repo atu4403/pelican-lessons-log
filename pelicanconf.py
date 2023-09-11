@@ -1,4 +1,4 @@
-AUTHOR = "vanic"
+AUTHOR = "atu4403"
 SITENAME = "pelican-lessons-log"
 SITEURL = "http://localhost:8200"
 PORT = 8200
