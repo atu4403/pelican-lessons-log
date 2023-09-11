@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>pelican-lessons-log - diary</title><link href="https://atu4403.github.io/pelican-lessons-log/" rel="alternate"></link><link href="https://atu4403.github.io/pelican-lessons-log/feeds/diary.atom.xml" rel="self"></link><id>https://atu4403.github.io/pelican-lessons-log/</id><updated>2023-09-02T00:00:00+09:00</updated><entry><title>日記(1日目)</title><link href="https://atu4403.github.io/pelican-lessons-log/ri-ji-1ri-mu.html" rel="alternate"></link><published>2023-09-01T00:00:00+09:00</published><updated>2023-09-01T00:00:00+09:00</updated><author><name>atu4403</name></author><id>tag:atu4403.github.io,2023-09-01:/pelican-lessons-log/ri-ji-1ri-mu.html</id><content type="html">&lt;h2&gt;content 1&lt;/h2&gt;
+&lt;p&gt;9:00: 起床&lt;/p&gt;
+&lt;p&gt;23:00: 就寝&lt;/p&gt;
+&lt;p&gt;このページは、動的に生成されたサンプルページです。&lt;/p&gt;</content><category term="diary"></category></entry><entry><title>日記(2日目)</title><link href="https://atu4403.github.io/pelican-lessons-log/ri-ji-2ri-mu.html" rel="alternate"></link><published>2023-09-02T00:00:00+09:00</published><updated>2023-09-02T00:00:00+09:00</updated><author><name>atu4403</name></author><id>tag:atu4403.github.io,2023-09-02:/pelican-lessons-log/ri-ji-2ri-mu.html</id><content type="html">&lt;h2&gt;content 2&lt;/h2&gt;
+&lt;p&gt;5:00: 起床&lt;/p&gt;
+&lt;p&gt;22:00: 就寝&lt;/p&gt;
+&lt;p&gt;このページは、動的に生成されたサンプルページです。&lt;/p&gt;</content><category term="diary"></category></entry></feed>
