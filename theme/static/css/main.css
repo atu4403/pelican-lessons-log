@@ -12,3 +12,18 @@ pre{
   background:#f3f6fc; /*背景色*/
   color:#54687c; /*文字色*/
 }
+blockquote {
+  max-width: 500px;
+  padding: 1em 1.5em;
+  border-left: 4px solid #d6dde3;
+  color: #333333;
+}
+blockquote p {
+  margin-top: 0;
+}
+blockquote cite {
+  display: block;
+  color: #737373;
+  font-size: .8em;
+  text-align: right;
+}

@@ -5,13 +5,15 @@ sortorder: 2
 
 ## 注意事項
 
-ページの追加は`pelican content`を再度実行することで反映される。開発サーバーの起動に`--autoreload` をしていても即時反映はされない。
+ 追加したページが反映されない時は`pelican --ignore-cache`として実行すると反映される。
 
 ## 静的ページの作成
 
 ブログ等の日々更新するものではなく、`about`や`contact`等の静的ページは`contact/pages`ディレクトリに配置する。これはナビゲーションメニューに表示される。
 
-##　リンク
+今回は[連絡先ページ]({filename}/pages/contact.md)を作成してみた。
+
+## リンク
 
 ```md
 [a link relative to the current file]({filename}1_my-first-article.md)  

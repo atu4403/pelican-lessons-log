@@ -7,13 +7,7 @@ sortorder: 8
 
 ## 基本的な手順
 
-1. 'publishconf.py'のSITEURLを設定
-2. `make publish`
-3. git add & commit
-4. githubリポジトリの作成とpush(`gh repo create`が便利)
-5. `make github`(`ghp-import`のインストールが必要)
-
-### 1. 'publishconf.py'のSITEURLを設定
+### 1. `publishconf.py`のSITEURLを設定
 
 'publishconf.py'の`SITEURL`を設定することで、リンクが本番環境用のものになります。
 
@@ -21,11 +15,11 @@ GitHubPagesのURLは`https://{アカウント名}.github.io/{リポジトリ名}
 
 ### 2. `make publish`
 
-このコマンドにより`publishconf.py`の設定からビルドが行われます。デフォルトでは一旦`output`ディレクトリを削除してからビルドするようになっているので、`make clean`を実行する必要はありません。
+`make publish`コマンドの実行により`publishconf.py`の設定からビルドが行われます。デフォルトでは一旦`output`ディレクトリを削除してからビルドするようになっているので、`make clean`を実行する必要はありません。
 
 ### 3. git add & commit
 
-ここまで問題がなければcommiしておきます。
+ここまで問題がなければcommitしておきます。
 
 ### 4. githubリポジトリの作成とpush
 
@@ -33,7 +27,7 @@ githubにpushします。github側にリポジトリを作っていないのな�
 
 ### 5. `make github`(`ghp-import`のインストールが必要)
 
-`make github`を行うことで面倒な設定を飛ばしてGitHubPagesのデプロイができます。ただし、内部的には`ghp-import`というコマンドを実行しているので、このインストールが必要になります。
+`make github`の実行により、面倒な設定を飛ばしてGitHubPagesのデプロイができます。ただし、内部的には`ghp-import`というコマンドを実行しているので、このインストールが必要になります。
 
 ```bash
 rye add ghp-import
@@ -59,15 +53,15 @@ GitHubPagesにサイトを構築する具体的な方法は、`gh-pages`ブラ�
 
 ### 設定方法
 
-- `publishconf.py`に`OUTPUT_PATH = "docs/"`と追記する
-- `.gitignore`に`output/`を追加
-- GitHubの設定を変更
-  - `settings` -> `pages` -> `Build and deployment`の`Branch`を`main`,`/docs`に変更してsave
+1. `publishconf.py`に`OUTPUT_PATH = "docs/"`と追記する
+1. `.gitignore`に`output/`を追加
+1. GitHubの設定を変更します。`settings` -> `pages` -> `Build and deployment`の`Branch`を`main`,`/docs`に変更してsaveすると完了です。
 
 これで`make publish`すると`docs`ディレクトリにコンテンツがビルドされます。
-そのままpushするだけで自動的にGitHubPagesも更新されます。
+そのままcommit & pushするだけで自動的にGitHubPagesも更新されます。
 
-`make devserver`では`output`ディレクトリにコンテンツがビルドされるので、開発用として使えます。このディレクトリをgit管理する必要は無いので外しています。
+`make devserver`では`output`ディレクトリにコンテンツがビルドされるので、開発用として使えます。  
+`output`ディレクトリをgit管理する必要は無いので外しています。
 
 注意点
 

@@ -8,3 +8,5 @@ sortorder: {{ sortorder }}
 {% for content in contents %}
 {{ content.time }}: {{ content.body }}
 {% endfor %}
+
+このページは、動的に生成されたサンプルページです。

@@ -4,9 +4,11 @@ Category: Lesson
 sortorder: 5
 
 ## themeディレクトリの構造について
+
 [公式のドキュメント](https://docs.getpelican.com/en/latest/themes.html#structure)では、以下の説明が書かれています。
 
-<pre><span></span>├── static
+```bash
+├── static
 │   ├── css
 │   └── images
 └── templates
@@ -21,18 +23,21 @@ sortorder: 5
     ├── period_archives.html  // to display time-period archives
     ├── tag.html              // processed for each tag
     └── tags.html             // must list all the tags. Can be a tag cloud.
-</pre>
+
+```
 
 > staticにはすべての静的アセットが含まれ、出力テーマのフォルダにコピーされます。上記のファイルシステム・レイアウトにはCSSと画像のフォルダが含まれていますが、これらは単なる例です。必要なものをここに入れてください。
 >
 >templatesには、コンテンツの生成に使用されるすべてのテンプレートが含まれます。上記のテンプレートファイルは必須です。テーマ作成中に整理整頓がしやすくなるのであれば、独自のテンプレートを追加することもできます。
+
+---
 
 ここで混乱してしまうポイントがあります。
 
 - これらのhtmlファイルの役割
 - 生成されるhtmlファイルとの関係
 
-まず勘違いしてしまうのは、これらと同名のhtmlファイルが作成されるのではないかということです。半分正解で半分間違いです。
+まず勘違いしてしまうのは、レンダリング時にこれらと同名のhtmlファイルが作成されるのではないかということです。半分正解で半分間違いです。
 
 例えば`index.html`は、このテンプレートから`index.html`が生成されます。`tags.html`や`categories.html`も生成されます。  
 一方で`article.html`は生成されません。このテンプレートはmarkdown等で用意した記事をレンダリングするために使われて、`記事名.html`などのファイルが作成されます。

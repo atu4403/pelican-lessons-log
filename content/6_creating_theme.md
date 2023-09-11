@@ -9,7 +9,8 @@ sortorder: 6
 
 前の項でも解説しましたが、テーマの作成には以下のファイルが必要です。
 
-<pre><span></span>├── static
+```bash
+├── static
 │   ├── css
 │   └── images
 └── templates
@@ -24,7 +25,8 @@ sortorder: 6
     ├── period_archives.html  // to display time-period archives
     ├── tag.html              // processed for each tag
     └── tags.html             // must list all the tags. Can be a tag cloud.
-</pre>
+
+```
 
 これを実際に用意するのは大変なので、今回は公式の`simple`テーマをコピーして修正する方法を取ります。
 `Pelican`をインストールした場所に`simple`テーマが入っています。私の場合は仮想環境にインストールしているので以下の場所にあります。
@@ -80,7 +82,8 @@ JS	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
 完成したものをダウンロードできるようにしてください。
 ```
 
-ダウンロードしたものを`base.html`と差し替えると完成です。他のファイルも同じようにすると終了です。
+ダウンロードしたものを`base.html`と差し替えると完成です。  
+他のファイルも同じようにすると終了です。
 
 ### ChatGPT plusが使えない場合
 
