@@ -162,8 +162,18 @@ make<span class="w"> </span>github
 しかし<code>main</code>ブランチの<code>docs</code>ディレクトリからコンテンツを読み込む設定もあります。
 この設定を行えば、上記3の工程は不要になります。</p>
 <h3>設定方法</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#　修正前</span>
+publish:
+<span class="w">    </span><span class="s2">&quot;</span><span class="k">$(</span>PELICAN<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>INPUTDIR<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>OUTPUTDIR<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>PUBLISHCONF<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">$(</span>PELICANOPTS<span class="k">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#　修正後</span>
+publish:
+<span class="w">    </span><span class="s2">&quot;</span><span class="k">$(</span>PELICAN<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>INPUTDIR<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>BASEDIR<span class="k">)</span><span class="s2">/docs&quot;</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>PUBLISHCONF<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">$(</span>PELICANOPTS<span class="k">)</span>
+</code></pre></div>
+
 <ol>
-<li><code>publishconf.py</code>に<code>OUTPUT_PATH = "docs/"</code>と追記する</li>
+<li><code>Makefile</code>を上記のように書き換える</li>
 <li><code>.gitignore</code>に<code>output/</code>を追加</li>
 <li>GitHubの設定を変更します。<code>settings</code> -&gt; <code>pages</code> -&gt; <code>Build and deployment</code>の<code>Branch</code>を<code>main</code>,<code>/docs</code>に変更してsaveすると完了です。</li>
 </ol>

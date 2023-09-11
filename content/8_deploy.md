@@ -53,7 +53,19 @@ GitHubPagesにサイトを構築する具体的な方法は、`gh-pages`ブラ�
 
 ### 設定方法
 
-1. `publishconf.py`に`OUTPUT_PATH = "docs/"`と追記する
+```bash
+#　修正前
+publish:
+	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+```
+
+```bash
+#　修正後
+publish:
+	"$(PELICAN)" "$(INPUTDIR)" -o "$(BASEDIR)/docs" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+```
+
+1. `Makefile`を上記のように書き換える
 1. `.gitignore`に`output/`を追加
 1. GitHubの設定を変更します。`settings` -> `pages` -> `Build and deployment`の`Branch`を`main`,`/docs`に変更してsaveすると完了です。
 
