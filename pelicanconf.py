@@ -2,7 +2,7 @@ AUTHOR = "vanic"
 SITENAME = "pelican-lessons-log"
 SITEURL = "http://localhost:8200"
 PORT = 8200
-OUTPUT_PATH = "docs/"
+
 
 PATH = "content"
 TIMEZONE = "Asia/Tokyo"
